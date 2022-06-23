@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+           function onDocLoad() {
+            console.log("Hit onDocLoad ");
+
+      const fdata = JSON.parse(window.localStorage.getItem("FormData"));
+      console.log(fdata);
+
+      for (var key in fdata) {
+    try{
+        document.getElementById(key).innerHTML = fdata[key];
+    }
+    catch(e){
+        console.log("errorwithfields "+key);
+    }
+  }
+
+    
+    }
+    </script>
+    <style>
+    
+    </style>
+  </head>
+  <body  onload = "onDocLoad()"  style="background-color: rgb(255, 255, 255); border: #ababab;">
+    <div id = "resume_display_parent" style="padding:121px">
+        <div id="resume_display_form" >
+        <div class = "row">
+            <div class ="col-md-2">
+            
+            </div>
+            <div class ="col-md-8" style="background-color: rgb(255, 255, 255); border: #ababab;" >
+            <div class ="Informations-basic" style="text-align: center;" >
+              <h2>  <span id="firstName" name = "firstName" ></span>
+                <span id="lastName"></span> </h2>
+                
+                <table width =300 id="table-phone-email" style="text-align: center;"></table>
+              
+                    <tr><i> <span id="email" ></span>
+                        <span id="mobile" ></span></tr>  
+                    </i>
+                    
+            
+        </div>
+            <div>
+                <h5>Education</h5>
+               <hr>
+                
+               <h7><b> Highest Degree Awarded </b>
+                </h7><br>
+               <i> <span id="highestqualifiaction" >Highest Qualifiaction</span>   
+              </i>  
+              
+               <b> <p>Name Of The Institution</p></b>
+                <i><span  id="collegename">College Name</span></i>
+          <p>
+            <b>
+            University
+        </b> 
+        </p>
+            <i>    <span id="universityboard"> University/Board</span>
+           </i>
+            </div>
+
+            <div> 
+                <br>
+                <h5>Work Experience</h5>
+                <hr>
+                <h6>  <span id="cCompany" name="cCompany"> Company</span></h6>
+               <div class="col-md-6" >
+                <tr>
+               <i> <span id="Designation">Designation</span></i>
+              
+               <span id ="yearOfExp" style="text-align: right;" >Year of Experience</span>
+               
+            </tr></div>
+            <div>
+            <p>Work Details</p> 
+                <span id="yourawesomework">Work Details</span>                               
+            <br>
+                </div>
+            </div>    
+            
+            
+        </div>
+        </div>
+
+    </div>
+
+  </body>
+</html>
